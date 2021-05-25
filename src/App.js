@@ -47,18 +47,17 @@ function Video(props) {
         </div>
     )
 };
+const UpgradedVideo = withPopular(Video)
+const UpgradedArticle = withPopular(Article)
 
 function List(props) {
     return props.list.map((item, index) => {
         switch (item.type) {
-            case 'video':
-                const UpgradedVideo = withPopular(Video)
+            case 'video': 
                 return (
                   <UpgradedVideo {...item} key={index} />
                 );
-
             case 'article':
-                const UpgradedArticle = withPopular(Article)
                 return (
                   <UpgradedArticle {...item} key={index} />
                 );
